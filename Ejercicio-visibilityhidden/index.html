@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio visibility:hidden</title>
+    <script>
+        function desaparece() {
+        provincia.style.visibility='hidden';
+         if (pais.value=="es") {
+           provincia.style.visibility='visible';
+         } 
+        }       
+    </script>
+</head>
+<body>
+    <h1>Provincia de envío</h1>
+      <form>
+        <label for="pais">Provincia</label>
+        <select name="pais" id="pais" onchange="desaparece()"> 
+            <option value="noseleccionado">Elija destino</option>
+            <option value="es">España</option>
+            <option value="fe">Fuera de España</option>
+            
+        </select>
+        <select name="provincia" id="provincia" style="visibility:hidden"  > 
+            <option value="noseleccionado">Elija provincia</option>
+            <option value="Val">Valencia</option>
+            <option value="Alm">Almería</option>
+            <option value="Cr">Ciudad Real</option>
+            <option value="Mad">Madrid</option>
+            <option value="Bar">Barcelona</option>
+            <option value="Bad">Badajoz</option>
+            <option value="Ast">Asturias</option>
+            <option value="Cad">Cádiz</option>
+            
+        </select>
+  
+    </form>
+</body>
+</html>

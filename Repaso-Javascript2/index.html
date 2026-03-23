@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso JS (Manejo del DOM)</title>
+    <style type="text/css">
+        img {width:200px;height: 200px;}
+        .importante {color: blue; background-color: lightblue;}
+
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Título</h1>
+    <h1 id="titulo2">Título</h1>
+    <p>Usuario: <input id="Usuario" type="text" value="Pepe"></p>
+    <img id="imagen" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Windmills_Alcazar_San_Juan_2024_%22Barcelona%22.jpg/250px-Windmills_Alcazar_San_Juan_2024_%22Barcelona%22.jpg">
+
+    <button onclick="cambiaTitulo()">Cambia título</button>
+    <button onclick="cambiaImagen()">Cambia Imagen</button>
+    <button onclick="cambiaValor()">Cambia Valor</button>
+    <button onclick="cambiaColor()">Cambia Color</button>
+    <button onclick="ocultaImagen()">Oculta Imagen</button>
+    <button onclick="aplicaClase()">Aplica Clase</button>
+    <button onclick="nuevoHTML()">Nuevo HTML</button>
+
+    <p>Idioma: <select id="idioma" onchange="cambiaIdioma()">
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+    </select> </p>
+
+    <script type="text/javascript">
+        /*Propiedad Inner.HTML*/
+        function cambiaTitulo() {
+            let titulo=document.getElementById("titulo");
+            titulo.innner.HTML="Título Nuevo"
+        }
+        /*atributos html: ej. src o value*/
+        function cambiaImagen() {
+            document.getElementById("imagen").src="https://static-resources-elementor.mirai.com/wp-content/uploads/sites/719/capcalera-descubriendo-los-molinos-de-viento-castilla-la-mancha.jpg"
+
+        }
+        
+        function cambiaValor() {
+            document.getElementById("usuario").value="admin";
+
+        }
+        /*propiedades css (se pone .style)*/
+        function cambiaColor() {
+            let titulo=document.getElementById("titulo");
+            titulo.style.color= "red";
+            titulo.style.backgroundColor= "yellow";
+            titulo.style.fontSize= "4em";
+            titulo.style.border= "2px solid red";
+        }
+        function ocultaImagen() {
+            document.getElementById("imagen").style.display="none";
+        }
+        /*aplicar una clase a un elemento*/
+        function aplicaClase() {
+            let titulo=document.getElementById("titulo2");
+            titulo.className="importante";
+
+        }
+        /*Escribir un nuevo HTML*/
+        function nuevoHTML() {
+            document.write("<h1>Nuevo HTML</h1>");
+
+        }
+        
+        function cambiaIdioma() {
+                let miSelect=document.getElementById("idioma");
+                let titulo=document.getElementById("titulo");
+                if (miSelect.value=="en" ) {
+                    titulo.innerHTML="New title";
+                } else {
+                    titulo.innerHTML="Nuevo título";
+                }
+        }
+    </script>
+
+</body>
+</html>

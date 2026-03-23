@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso JavaScript</title>
+
+</head>
+<body>
+    <button onclick="acceso()">Pregunta edad</button>
+    <button onclick="suma()">Suma</button>
+    <button onclick="login()">Login</button>
+    <button onclick="calculaDoble()">Doble</button>
+    <button onclick="diceAlineacion()">Alineación</button>
+    <button onclick="sumaHasta()">Suma n primeros números</button>
+
+    <script>
+        /******************************************/
+        /* acceso(): alert y prompt, let, if,     */
+        /******************************************/
+
+        function acceso() {
+            let edad=prompt("Dime la edad");
+            if (edad<18) {
+                alert("No puedes entrar");
+            } else {
+                alert("Bienvenid@ a mi página");
+            }
+        }
+
+        /********************************************************/
+        /* suma(): vemos el operador + y la funcion parseInt    */
+        /********************************************************/
+
+        function suma() {
+            let x=prompt("Dime la x");
+            let y=prompt("Dime la y");
+            prompt("La suma es " + parseInt(x) + parseInt(y)) /*ponemos parseInt para que sume y no concatene*/
+        }
+
+        /*************************************************************/
+        /* login(): operador de relación == y op. Lógico && (and)    */
+        /************************************************************/
+
+        function login() {
+            let usuario=prompt("Introduzca usuario");
+            let password=prompt("Introduzca contraseña");
+            if (usuario=="admin" && password=="1234") {
+                alert("Puede acceder a la página");
+            } else {
+                alert("Acceso denegado. Credenciales no válidas");
+            }
+
+        }
+
+        /*************************************************************/
+        /* doble(): funcion con argumento y devolución de valores    */
+        /************************************************************/
+
+        function doble(n) {
+                        return 2*n;
+        }
+        function calculaDoble() {
+            let num=prompt("Dime un número");
+            alert("El doble de " + num + "es " + doble(num));
+        }
+
+        /*************************************************************/
+        /* diceAlineacion(): Arrays                                 */
+        /************************************************************/
+
+        function dobleAlineacion() { /*el primer valor de la lista es 0, no 1*/
+            let alineacion= ['Benzema','Bale','Marcelo','Sergio Ramos'];
+            let posicion=prompt("Dime una posición");
+            alert("En la posición " + posicion + " juega " 
+            + alineacion[posicion]);
+        }
+
+        /*************************************************************/
+        /* sumaHast(): Bucle for                                     */
+        /************************************************************/
+
+        function sumaHasta() {
+            let num=prompt("Hasta que número quieres sumar");
+            let suma=0;
+            for( let i=1;i<=num;i++) {
+                suma=suma + i;
+            } /*entre las llaves esta la sentencia que se va a estar repitiendo*/
+            alert("La suma de los " + num + " primeros números es " + suma)
+
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM y javascript</title>
+    <style type="text/css">
+        #caja {border: 1px solid blue; 
+                padding: 20px;
+                width: 300px;
+            }
+    </style>
+    <script type="text/javascript">
+        function cambiaTitulo() {
+            var titulo =
+            document.getElementById ("titulo" ); /*.getElementById Agarra el elemento titulo y lo meto en el objeto titulo*/
+                if (titulo.innerHTML=="Título inicial") {
+                     titulo.innerHTML="Nuevo título"; /*.innerHTML es propiedad que tienen algunos elementos (h1) q se refiere al contenido del elemento*/
+                } else {
+                    titulo.innerHTML="Título inicial";
+
+                }
+                document.getElementById ("caja" ).innerHTML="Nuevo contenido"
+               
+        }
+        function cambiaAnchoImagen() {
+           var imagen=document.getElementById ("imagen"); /*he agarrado la imagen por su ID*/
+           imagen.width = imagen.width + 100; /*he cambiado el ancho, ahora el ancho es el ancho que tiene +100*/
+
+        }
+        function cambiaSRC() {
+            document.getElementById("imagen").src = "quijote.jpeg"
+        }
+        function cambiaCaja() {
+            var caja=document.getElementById("caja");
+            caja.style.width='500px'; /*hemos cambiado el ancho de la caja*/
+            caja.style.backgroundColor='turquoise'; /*hemos cambiado el color de la caja*/
+            caja.style.fontSize='50px';
+            caja.style.color='red';
+        }
+    </script>
+</head>
+<body>
+    <h1 id="titulo">Título inicial</h1>
+    <div id="caja">Contenido caja</div>
+    <!--etiquetas html que se convertirán en elementos del DOM-->
+    <img id="imagen" src="gigantes-alcazar.jpg" width="200" height="300">
+    <br>
+    <button onclick="cambiaTitulo()">Cambiar título</button> <!--cuando pulses el boton cambiará-->
+    <button onclick="cambiaAnchoImagen()">Cambia ancho de imagen</button>
+    <button onclick="cambiaSRC()">Cambia imagen</button>
+    <button onclick="cambiaCaja()">Cambia caja</button>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <button onclick="alineacion()">Alineación</button>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="tablaMultiplicar()">Tabla de multiplicar</button>
+    <button onclick="imprime_alineacion()">Imprime alineación</button>
+    <script type="text/javascript">
+        /*bucle*/ 
+            function tablaMultiplicar() {
+            let numero=prompt("Dime un número y hayo tabla de multiplicar: ");
+            document.write("<h1>Tabla del " + numero + "</h1>");
+            document.write("<table border='1'>");
+            for (let i=1;i<=10;i++) {
+               /*instruccion para que la salida la quiero escribir en el propio documento*/ 
+               document.write("<tr><td>" + numero + "x" + i + "</td><td>" + numero*i + "</td></tr>")
+            }
+            document.write("</table>");
+        }
+        /*bucle*/ 
+            function factorial(){
+            let numero=prompt("Dime un número que le calculo el factorial:");
+            let factorial=1;
+            for (let i=1;i<=numero;i++) {
+                factorial=factorial*i;
+            }
+            alert("El factorial de " + numero + " es " + factorial)
+        }
+        
+        /*Array*/
+            function alineacion () {
+            var alineacion=['Benzema','Bale','Marcelo','Sergio R.']; /*introducir varios valores bajo el nombre de alineacion*/
+            alineacion[4]="Casemiro";
+            let posicion=prompt("Dime posición del 0 al 4: ");
+            alert(alineacion[posicion]);
+
+        }
+        /*arrays y bucles*/
+            function imprime_alineacion () {
+            let alineacion=['Benzema','Bale','Marcelo','Sergio R.']; 
+            alineacion[4]="Casemiro";
+            for (let i=0;i<alineacion.length;i++){
+                document.write(i + " " + alineacion[i] + "<br>")
+            }
+            
+
+        }
+
+    </script>
+</body>
+</html>

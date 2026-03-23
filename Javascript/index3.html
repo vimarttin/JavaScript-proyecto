@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de números</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*let numero1=prompt("Dime un número");
+        let numero2=prompt("Dime un número");
+        let suma=numero1+numero2; /*esto no va a sumar, va a concatenar, porque son string, habría que pasarlo a un numero hay que usar parseInt
+        alert("La suma de " + numero1 + " y " + numero2 + " es " + suma) */
+        
+        function parImpar( num ) {
+            if (num %2==0) {
+                return "par";
+
+            } else {
+                return "impar";
+            }
+        }
+        function diceImpar() {
+            let numero=parseInt(prompt("Dime un número"));
+            let resultado=parImpar(numero);
+            alert("El número " + numero + " es " + resultado);
+
+        }
+        function sumaNumeros() {
+            let numero1=parseInt(prompt("Dime un número"));
+            let numero2=parseInt(prompt("Dime otro número"));
+            let suma=numero1+numero2;
+            alert("La suma de " + numero1 + " y " + numero2 + " es " + suma) /*este codigo se ejecuta nada mas arrancar la pg, si yo quiero que se ejecute cuando el usuario lo pida tengo q meterlo dentro de una funcion*/
+        }
+
+    </script>
+    <button onclick="sumaNumeros()">Suma Números</button> <!--hemos metido un botón de suma numeros que cuando el usuario haga click llamará a la funcion sumaNumeros-->
+    <button onclick="diceImpar()">Par o impar</button>
+</body>
+</html>
